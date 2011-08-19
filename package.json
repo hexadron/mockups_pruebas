@@ -1,0 +1,12 @@
+{
+	"name": "mockups",
+	"version": "0.0.1",
+	"private": "true",
+	"dependencies": {
+		"express": "2.3.11",
+		"jade": ">= 0.0.1",
+		"markdown-js": "0.0.3",
+		"stylus": "0.15.1",
+		"cradle": "0.5.5"
+	}
+}
