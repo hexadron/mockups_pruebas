@@ -19,20 +19,29 @@ body {
 #whiteboard {
   width: 100%;
   height: 80%;
-  background-color: #fafafa;
 }
 
-/* line 18, ../../assets/sass/style.sass */
+/* line 17, ../../assets/sass/style.sass */
 #taskbar {
   padding: 0.5em 2.2em;
   background-color: #4d4d4d;
 }
 
-/* line 22, ../../assets/sass/style.sass */
+/* line 21, ../../assets/sass/style.sass */
 #taskbar li {
   width: 6em;
   height: 6em;
   margin: 0.5em 1em;
   border-radius: 100em;
   background-color: #b3b3b3;
+}
+
+/* line 28, ../../assets/sass/style.sass */
+.hoverboard {
+  background-color: #f5f5a3 !important;
+}
+
+/* line 31, ../../assets/sass/style.sass */
+.nohoverboard {
+  background-color: #fafafa;
 }

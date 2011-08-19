@@ -69,3 +69,23 @@ $ ->
 		time = if e.type == 'click' then 0 else 400
 		fn =-> evaluarDespliegue desplegado
 		setTimeout fn, time
+
+	($ '._browser').live 'dragstart', (e)->
+		e.originalEvent.dataTransfer.setData 'text/html', $(desplegado).html()
+
+	($ '._browser').live 'drag', (e)-> 'nothing'
+
+	($ '._browser').live 'drop', (e)->
+		alert e.originalEvent.dataTransfer
+
+	($ '._browser, .clone').live 'dragover', (e)->
+		e.stopPropagation()
+		e.preventDefault()
+
+	($ '#whiteboard').bind 'dragover', (e)->
+		$(@).removeClass 'nohoverboard'
+		$(@).addClass 'hoverboard'
+
+	($ '#whiteboard').bind 'dragleave', (e)->
+		$(@).removeClass 'hoverboard'
+		$(@).addClass 'nohoverboard'
