@@ -1,7 +1,38 @@
-@import "set.css";
-html{height:93%}
-body{height:98%}
-#container,#main{height:100%;font-size:12px}
-#whiteboard{width:100%;height:80%;background-color:#fafafa}
-#taskbar{padding:.5em 2.2em;background-color:#4d4d4d}
-#taskbar li{width:6em;height:6em;margin:.5em 1em;border-radius:100em;background-color:#b3b3b3}
+@import url(set.css);
+/* line 3, ../../assets/sass/style.sass */
+html {
+  height: 93%;
+}
+
+/* line 6, ../../assets/sass/style.sass */
+body {
+  height: 98%;
+}
+
+/* line 9, ../../assets/sass/style.sass */
+#container, #main {
+  height: 100%;
+  font-size: 12px;
+}
+
+/* line 13, ../../assets/sass/style.sass */
+#whiteboard {
+  width: 100%;
+  height: 80%;
+  background-color: #fafafa;
+}
+
+/* line 18, ../../assets/sass/style.sass */
+#taskbar {
+  padding: 0.5em 2.2em;
+  background-color: #4d4d4d;
+}
+
+/* line 22, ../../assets/sass/style.sass */
+#taskbar li {
+  width: 6em;
+  height: 6em;
+  margin: 0.5em 1em;
+  border-radius: 100em;
+  background-color: #b3b3b3;
+}
