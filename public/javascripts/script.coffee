@@ -10,31 +10,25 @@ window.FanView = Backbone.View.extend
 
 	# this data must come from a collection of models,
 	# not from here.
-	browsers: [
-		{id: '_safari', content: 'safari'},
-		{id: '_chrome', content: 'chrome'}, 
-		{id: '_firefox', content: 'firefox'},
-		{id: '_opera', content: 'opera'},
-		{id: '_ie9', content: 'ie9'}]
-	windows: [
-		{id: '_macosx', content: 'macosx'},
-		{id: '_windows', content: 'windows'},
-		{id: '_unity', content: 'unity'},
-		{id: '_gnome', content: 'gnome'}]
-	smarts: [
-		{id: '_ios', content: 'ios'},
-		{id: '_android', content: 'android'},
-		{id: '_winphone', content: 'winphone'},
-		{id: '_symbian', content: 'symbian'}]
-	textelements: [
-		{id: '_textbox', content: 'textbox'},
-		{id: '_textarea', content: 'textarea'},
-		{id: '_passfield', content: 'passfield'}]
-	buttons: [
-		{id: '_normal', content: 'normal'},
-		{id: '_multi', content: 'multi'},
+	textos: [
+		{id: '_titulo', content: 'titulo'},
+		{id: '_subtitulo', content: 'subtitulo'},
+		{id: '_parrafo', content: 'parrafo'},
+		{id: '_label', content: 'label'}]
+	formas: [
+		{id: '_cuadrado', content: 'cuadrado'},
+		{id: '_circulo', content: 'circulo'}]
+	controles: [
+		{id: '_boton', content: 'boton'},
 		{id: '_radio', content: 'radio'},
-		{id: '_icon', content: 'icon'}]
+		{id: '_checkbox', content: 'checkbox'}]
+	cont_textos: [
+		{id: '_textbox', content: 'textbox'},
+		{id: '_textarea', content: 'textarea'}]
+	contenedores: [
+		{id: '_panel', content: 'panel'},
+		{id: '_navegador', content: 'navegador'},
+		{id: '_ventana', content: 'ventana'}]
 
 	events:
 		'click li:not(.clone)' : 'evalDeployment'
@@ -97,10 +91,7 @@ window.FanView = Backbone.View.extend
 						$('.clone').remove()
 						that.deploying = false
 						that.clones = []
-						# podria ser
-						# callback.call() if callback?
-						if !(callback is undefined)
-							callback.call()
+						callback?.call()
 					dieCount++
 
 	cloneSelect: (e)->
@@ -118,10 +109,10 @@ window.FanView = Backbone.View.extend
 
 	getArray: (type) ->
 		switch type
-			when 'browser' then @browsers
-			when 'window' then @windows
-			when 'smartphone' then @smarts
-			when 'text' then @textelements
-			when 'button' then @buttons
+			when 'text' then @textos
+			when 'shape' then @formas
+			when 'control' then @controles
+			when 'textcontainer' then @cont_textos
+			when 'container' then @contenedores
 
 $ -> new FanView el: $('#taskbar')
