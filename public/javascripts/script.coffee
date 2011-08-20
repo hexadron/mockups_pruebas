@@ -8,7 +8,7 @@ window.FanView = Backbone.View.extend
 	deployed: undefined
 	clones: []
 
-	# this data must comes from a collection of models,
+	# this data must come from a collection of models,
 	# not from here.
 	browsers: [
 		{id: '_safari', content: 'safari'},
@@ -77,7 +77,6 @@ window.FanView = Backbone.View.extend
 			$(c).animate
 				top: "-=#{y}"
 				left: "+=#{x}"
-			'normal'
 			x += init_x
 			y += init_y
 			init_x += 5
@@ -98,6 +97,8 @@ window.FanView = Backbone.View.extend
 						$('.clone').remove()
 						that.deploying = false
 						that.clones = []
+						# podria ser
+						# callback.call() if callback?
 						if !(callback is undefined)
 							callback.call()
 					dieCount++
