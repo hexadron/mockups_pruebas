@@ -1,91 +1,83 @@
-###
- Author:
-###
+# ###
+#  Author:
+# ###
 
-String.prototype.contains = (chain)-> @indexOf(chain) != -1
+window.FanView = Backbone.View.extend
+	events:
+		'click li' : 'evalDeployment'
+		'dragstart li' : 'listLagDeploy'
+		'click .clone' : 'cloneLagDeploy'
+		'dragstart .clone' : 'listLagDeploy'
 
-moving = false
-desplegado = undefined
-clones = []
+	#global variables
+	deploying: false
+	deployed: undefined
+	clones: []
+	#global arrays
+	browsers = ['S', 'C', 'F', 'I', 'O']
 
-desplegar = (task) ->
-	# clones creados todos en el mismo lugar
-	for i in [1..5]
-		c = (($ task).clone().css
-			position: 'absolute'
-			top: $(task).position().top
-			left: $(task).position().left
-			zIndex: 0
-		).addClass('clone').appendTo('#taskbar ul')
-		clones.push c
-	# para luego ser lanzados en cola
-	init_y = 72
-	init_x = 2
-	y = init_y
-	x = init_x
-	for c in clones
-		$(c).animate
-			top: "-=#{y}"
-			left: "+=#{x}"
-		'normal'
-		x += init_x
-		y += init_y
-		init_x += 6
-	desplegado = task
-	moving = true
+	evalDeployment: (e) ->
+		that = $(e.target)
+		if not @deploying
+			@deploy that
+		else if that[0] == @deployed[0]
+			@retract()
+		else
+			view = @
+			fn = -> view.deploy that
+			@retract fn
 
-replegar = ->
-	dieCount = 0
-	for c in clones
-		$(c).animate
-			top: $(desplegado).position().top,
-			left: $(desplegado).position().left
-			'normal',
-			->
-				dieCount++
-				if dieCount == 5
-					$('.clone').remove()
-					moving = false
-					clones = []
+	deploy: (item) ->
+		for i in [1..5]
+			c = ($ item).clone()
+			c.addClass 'clone'
+			c.css
+				position: 'absolute'
+				top: $(item).position().top
+				left: $(item).position().left
+				zIndex: 0
+			c.appendTo '#taskbar ul'
+			@clones.push c
+		init_y = 72
+		init_x = 0
+		y = init_y
+		x = init_x
+		for c in @clones
+			$(c).animate
+				top: "-=#{y}"
+				left: "+=#{x}"
+			'normal'
+			x += init_x
+			y += init_y
+			init_x += 5
+		@deployed = item
+		@deploying = true
 
+	retract: (callback) ->
+		dieCount = 1
+		that = @
+		for c in @clones
+			$(c).animate
+				top: $(@deployed).position().top,
+				left: $(@deployed).position().left
+				'normal',
+				->
+					if dieCount == 5
+						$('.clone').remove()
+						that.deploying = false
+						that.clones = []
+						if !(callback is undefined)
+							callback.call()
+					dieCount++
 
-evaluarDespliegue = (task) ->
-	if not moving and $(task).attr('class') == '_browser'
-		desplegar task
-	else
-		replegar()
+	listLagDeploy: -> @lagDeploy 400
 
-$ ->
-	($ '#taskbar li').bind 'click', (e) ->
-		e.preventDefault()
-		evaluarDespliegue @
-	
-	($ '#taskbar li').bind 'dragstart', ->
-		if moving
-			fn =-> evaluarDespliegue desplegado
-			setTimeout fn, 400
+	cloneLagDeploy: -> @lagDeploy 0
 
-	($ '.clone').live 'dragstart click', (e)->
-		time = if e.type == 'click' then 0 else 400
-		fn =-> evaluarDespliegue desplegado
-		setTimeout fn, time
+	lagDeploy: (time)->
+		that = @
+		if @deploying
+			fn =-> that.retract()
+			setTimeout fn, time
 
-	($ '._browser').live 'dragstart', (e)->
-		e.originalEvent.dataTransfer.setData 'text/html', $(desplegado).html()
-
-	($ '._browser').live 'drag', (e)-> 'nothing'
-
-	($ '._browser').live 'drop', (e)->
-		alert e.originalEvent.dataTransfer
-
-	($ '._browser, .clone').live 'dragover', (e)->
-		e.stopPropagation()
-		e.preventDefault()
-
-	($ '#whiteboard').bind 'dragover', (e)->
-		$(@).removeClass 'nohoverboard'
-		$(@).addClass 'hoverboard'
-
-	($ '#whiteboard').bind 'dragleave', (e)->
-		$(@).removeClass 'hoverboard'
-		$(@).addClass 'nohoverboard'
+$ -> new FanView el: $('#taskbar')

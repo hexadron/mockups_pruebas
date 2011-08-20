@@ -18,30 +18,32 @@ body {
 /* line 13, ../../assets/sass/style.sass */
 #whiteboard {
   width: 100%;
-  height: 80%;
+  height: 78%;
 }
 
 /* line 17, ../../assets/sass/style.sass */
 #taskbar {
-  padding: 0.5em 2.2em;
+  width: 100%;
+  height: 16%;
   background-color: #4d4d4d;
 }
 
-/* line 21, ../../assets/sass/style.sass */
+/* line 22, ../../assets/sass/style.sass */
 #taskbar li {
   width: 6em;
   height: 6em;
   margin: 0.5em 1em;
   border-radius: 100em;
+  float: left;
   background-color: #b3b3b3;
 }
 
-/* line 28, ../../assets/sass/style.sass */
+/* line 30, ../../assets/sass/style.sass */
 .hoverboard {
   background-color: #f5f5a3 !important;
 }
 
-/* line 31, ../../assets/sass/style.sass */
+/* line 33, ../../assets/sass/style.sass */
 .nohoverboard {
   background-color: #fafafa;
 }
