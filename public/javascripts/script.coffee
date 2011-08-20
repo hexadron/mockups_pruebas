@@ -8,17 +8,39 @@ window.FanView = Backbone.View.extend
 	deployed: undefined
 	clones: []
 
-	browsers: ['safari', 'chrome', 'firefox', 'ie9', 'opera']
-	windows: ['macosx', 'windows', 'unity', 'gnome']
-	smarts: ['ios', 'android', 'winphone', 'symbian']
-	textelements: ['textbox', 'textarea', 'passfield']
-	buttons: ['normal', 'multi', 'radio', 'icon']
+	# this data must comes from a collection of models,
+	# not from here.
+	browsers: [
+		{id: '_safari', content: 'safari'},
+		{id: '_chrome', content: 'chrome'}, 
+		{id: '_firefox', content: 'firefox'},
+		{id: '_opera', content: 'opera'},
+		{id: '_ie9', content: 'ie9'}]
+	windows: [
+		{id: '_macosx', content: 'macosx'},
+		{id: '_windows', content: 'windows'},
+		{id: '_unity', content: 'unity'},
+		{id: '_gnome', content: 'gnome'}]
+	smarts: [
+		{id: '_ios', content: 'ios'},
+		{id: '_android', content: 'android'},
+		{id: '_winphone', content: 'winphone'},
+		{id: '_symbian', content: 'symbian'}]
+	textelements: [
+		{id: '_textbox', content: 'textbox'},
+		{id: '_textarea', content: 'textarea'},
+		{id: '_passfield', content: 'passfield'}]
+	buttons: [
+		{id: '_normal', content: 'normal'},
+		{id: '_multi', content: 'multi'},
+		{id: '_radio', content: 'radio'},
+		{id: '_icon', content: 'icon'}]
 
 	events:
 		'click li:not(.clone)' : 'evalDeployment'
-		'dragstart li' : 'listLagDeploy'
+		'dragstart li' : 'lagRetract'
 		'click .clone' : 'cloneSelect'
-		'dragstart .clone' : 'listLagDeploy'
+		'dragstart .clone' : 'lagRetract'
 
 	evalDeployment: (e) ->
 		that = $(e.target)
@@ -32,7 +54,8 @@ window.FanView = Backbone.View.extend
 			@retract fn
 
 	deploy: (item) ->
-		collection = @getArray $(item).attr 'class'
+		typeclass = $(item).attr 'class'
+		collection = @getArray typeclass.substring(1, typeclass.length)
 		for i in collection
 			c = ($ item).clone()
 			c.addClass 'clone'
@@ -43,8 +66,8 @@ window.FanView = Backbone.View.extend
 				zIndex: 0
 			c.appendTo '#taskbar ul'
 			c.removeAttr 'id'
-			c.attr 'id', "_#{i}"
-			c.html i
+			c.attr 'id', "_#{i.id}"
+			c.html i.content
 			@clones.push c
 		init_y = 72
 		init_x = 0
@@ -79,29 +102,25 @@ window.FanView = Backbone.View.extend
 							callback.call()
 					dieCount++
 
-	listLagDeploy: -> @lagDeploy 400
-
 	cloneSelect: (e)->
-		@lagDeploy 0
 		type = ".#{$(e.target).attr('class').split(' ')[0]}"
 		id = $(e.target).attr 'id'
-		name = id.substring 1, id.length
-		console.log "#{type} #{id} #{name}"
-		$(type).attr('id', id).html name
+		content = $(e.target).html()
+		$(type).attr('id', id).html content
+		@retract()
 
-
-	lagDeploy: (time) ->
+	lagRetract: ->
 		that = @
 		if @deploying
 			fn =-> that.retract()
-			setTimeout fn, time
+			setTimeout fn, 400
 
 	getArray: (type) ->
-		switch "#{type.substring(1, type.length)}s"
-			when 'browsers' then @browsers
-			when 'windows' then @windows
-			when 'smartphones' then @smarts
-			when 'texts' then @textelements
-			when 'buttons' then @buttons
+		switch type
+			when 'browser' then @browsers
+			when 'window' then @windows
+			when 'smartphone' then @smarts
+			when 'text' then @textelements
+			when 'button' then @buttons
 
 $ -> new FanView el: $('#taskbar')
