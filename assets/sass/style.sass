@@ -1,3 +1,4 @@
+@import "compass/css3/images"
 @import "set.css"
 
 html
@@ -5,7 +6,7 @@ html
 
 body
   height: 98%
-  background-color: hsl(0, 0%, 95%)
+  background-color: hsl(30, 0, 70)
 
 #container, #main
   height: 100%
@@ -16,6 +17,8 @@ body
   height: 84%
   border-bottom: 2px solid hsl(0, 0%, 15%)
   background-color: hsl(0, 0%, 100%)
+  +background-image(linear-gradient(hsla(30, 0, 100, 0.2), hsla(30, 0, 100, 0.2) 5.0%, hsla(30, 0, 20, 0.2) 5.05%, hsla(30, 0, 100, 0.2) 5.1%, hsla(30, 0, 100, 0.2) 10.0%, hsla(30, 0, 20, 0.2) 10.05%, hsla(30, 0, 100, 0.2) 10.1%, hsla(30, 0, 100, 0.2) 15.0%, hsla(30, 0, 20, 0.2) 15.05%, hsla(30, 0, 100, 0.2) 15.1%, hsla(30, 0, 100, 0.2) 20.0%, hsla(30, 0, 20, 0.2) 20.05%, hsla(30, 0, 100, 0.2) 20.1%, hsla(30, 0, 100, 0.2) 25.0%, hsla(30, 0, 20, 0.2) 25.05%, hsla(30, 0, 20, 0.2) 25.1%, hsla(30, 0, 100, 0.2) 25.3%, hsla(30, 0, 100, 0.2) 30.05%, hsla(30, 0, 20, 0.2) 30.10%, hsla(30, 0, 100, 0.2) 30.2%, hsla(30, 0, 100, 0.2) 35.05%, hsla(30, 0, 20, 0.2) 35.10%, hsla(30, 0, 100, 0.2) 35.2%, hsla(30, 0, 100, 0.2) 40.05%, hsla(30, 0, 20, 0.2) 40.10%, hsla(30, 0, 100, 0.2) 40.2%, hsla(30, 0, 100, 0.2) 45.05%, hsla(30, 0, 20, 0.2) 45.10%, hsla(30, 0, 100, 0.2) 45.2%, hsla(30, 0, 100, 0.2) 50.0%, hsla(30, 0, 20, 0.2) 50.1%, hsla(30, 0, 100, 0.2) 50.2%, hsla(30, 0, 20, 0.2) 50.25%, hsla(30, 0, 100, 0.2) 50.32%, hsla(30, 0, 100, 0.2) 55.05%, hsla(30, 0, 20, 0.2) 55.1%, hsla(30, 0, 100, 0.2) 55.2%, hsla(30, 0, 100, 0.2) 60.0%, hsla(30, 0, 20, 0.2) 60.05%, hsla(30, 0, 100, 0.2) 60.1%, hsla(30, 0, 100, 0.2) 65.0%, hsla(30, 0, 20, 0.2) 65.05%, hsla(30, 0, 100, 0.2) 65.1%, hsla(30, 0, 100, 0.2) 70.0%, hsla(30, 0, 20, 0.2) 70.05%, hsla(30, 0, 100, 0.2) 70.1%, hsla(30, 0, 100, 0.2) 75.0%, hsla(30, 0, 20, 0.2) 75.05%, hsla(30, 0, 100, 0.2) 75.5%, hsla(30, 0, 100, 0.2) 80.0%, hsla(30, 0, 20, 0.2) 80.15%, hsla(30, 0, 100, 0.2) 80.2%, hsla(30, 0, 100, 0.2) 85.3%, hsla(30, 0, 20, 0.2) 85.35%, hsla(30, 0, 100, 0.2) 85.4%, hsla(30, 0, 100, 0.2) 90.0%, hsla(30, 0, 20, 0.2) 90.05%, hsla(30, 0, 100, 0.2) 90.3%, hsla(30, 0, 100, 0.2) 95.0%, hsla(30, 0, 20, 0.2) 95.1%, hsla(30, 0, 100, 0.2) 95.2%,  hsla(30, 0, 100, 0.2)), linear-gradient(hsla(50, 100, 55, 0.4), hsla(50, 100, 55, 0.1)))
+  // background: -webkit-gradient(linear, left top, right top, from(hsla(30, 0, 100, 1)), color-stop(16.6%, hsla(0, 0, 100, 1)), color-stop(16.65%, hsla(0, 0, 30, 1)), color-stop(16.7%, hsla(0, 0, 100, 1)), color-stop(33.3%, hsla(0, 0, 100, 1)), color-stop(33.35%, hsla(0, 0, 30, 1)), color-stop(33.4%, hsla(0, 0, 100, 1)), color-stop(49.8%, hsla(0, 0, 100, 1)), color-stop(49.85%, hsla(0, 0, 30, 1)), color-stop(49.9%, hsla(0, 0, 100, 1)),color-stop(66.4%, hsla(0, 0, 100, 1)), color-stop(66.45%, hsla(0, 0, 30, 1)), color-stop(66.5%, hsla(0, 0, 100, 1)), color-stop(83%, hsla(0, 0, 100, 1)), color-stop(83.05%, hsla(0, 0, 30, 1)), color-stop(83.1%, hsla(0, 0, 100, 1)), color-stop(99.6%, hsla(0, 0, 100, 1)), color-stop(99.65%, hsla(0, 0, 30, 1)), color-stop(99.7%, hsla(0, 0, 100, 1)), to(hsla(30, 0, 90, 1)))
 
 #taskbar
   position: relative
@@ -24,6 +27,7 @@ body
   width: 100%
   margin: auto
   height: 16%
+  background: -webkit-gradient(linear, left top, left bottom, from(hsl(30, 0, 87)), to(hsl(30, 0, 70)))
 
 #taskbar ul
   float: left
@@ -45,7 +49,10 @@ body
   margin: .5em 1em
   border-radius: 100em
   border: 2px solid hsl(0, 0%, 15%)
-  background-color: hsl(0, 0%, 70%)
+  background-color: hsl(0, 0%, 60%)
+
+#taskbar .menu li:hover
+  background-color: hsl(0, 99%, 57%)
 
 .inner
   height: 100%

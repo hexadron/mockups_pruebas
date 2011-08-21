@@ -9,18 +9,22 @@ window.StartView = Backbone.View.extend
 		me = @
 		title = $('''
 			<header id='start'>
-				<h1>Moca</h1>
-				<h4 style='font-size: .5em'>click en cualquier lado para comenzar</h4>
+				<h1 style='margin-top: 10%;'>moca</h1>
+				<h4 style='font-size: .5em; margin-top: -1.5em'>click en cualquier lado para comenzar a crear una interfaz</h4>
 			</header>
 		''').css
 			position: 'absolute'
-			top: '10%'
+			top: '0'
 			width: '100%'
-			height: '86%'
+			height: '100%'
 			display: 'none'
-			fontFamily: 'Aller'
+			color: 'hsl(0, 0%, 0%)'
+			fontFamily: 'Comfortaa'
+			fontWeight: 'bold'
 			textAlign: 'center'
 			fontSize: '4.5em'
+			textShadow: '0 0 20px hsl(0, 0%, 60%)'
+			backgroundColor: 'hsla(0, 0%, 0%, 0.1)'
 		@el.append title
 		$('#start').fadeIn 'slow', ->
 			me.canHide = true
