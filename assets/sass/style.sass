@@ -5,6 +5,7 @@ html
 
 body
   height: 98%
+  background-color: hsl(0, 0%, 95%)
 
 #container, #main
   height: 100%
@@ -12,23 +13,47 @@ body
 
 #whiteboard
   width: 100%
-  height: 78%
+  height: 84%
+  border-bottom: 2px solid hsl(0, 0%, 15%)
+  background-color: hsl(0, 0%, 100%)
 
 #taskbar
+  position: relative
+  padding-top: 2em
+  float: left
   width: 100%
+  margin: auto
   height: 16%
-  background-color: hsl(0, 0%, 30%)
+
+#taskbar ul
+  float: left
+  clear: left
+  position: relative
+  left: 50%
+
+#taskbar .menu
+  height: 100%
 
 #taskbar li
-  width: 6em
-  height: 6em
+  position: relative
+  right: 50%
+  float: left
+
+#taskbar .menu li
+  width: 5em
+  height: 5em
   margin: .5em 1em
   border-radius: 100em
-  float: left
+  border: 2px solid hsl(0, 0%, 15%)
   background-color: hsl(0, 0%, 70%)
+
+.inner
+  height: 100%
+  border-radius: 100em
+  display: none
 
 .hoverboard
   background-color: hsl(60, 80%, 80%) !important
 
 .nohoverboard
-  background-color: hsl(0, 0%, 98%)
+  background-color: hsl(0, 0%, 100%)

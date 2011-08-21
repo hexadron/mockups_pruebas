@@ -24,21 +24,19 @@ html(class='no-js', lang='en')
 
   body
     #container
-      header
-        h1 WhiteBoard
       #main(role='main')!= body
       footer
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js')
     script window.jQuery || document.write('<script src="javascripts/libs/jquery-1.6.2.min.js"><\\/script>')
 
-    script(src='http://jashkenas.github.com/coffee-script/extras/coffee-script.js')
-    script window.CoffeeScript || document.write('<script src="javascripts/libs/coffee-script.js"><\\/script>')
-
+    script(src='javascripts/libs/coffee-script.js')
     script(src='javascripts/libs/underscore.js')
     script(src='javascripts/libs/backbone.js')
 
-    script(type='text/javascript', src='javascripts/plugins.js')
+    script(type='text/coffeescript', src='javascripts/plugins.coffee')
+    script(type='text/coffeescript', src='javascripts/mockup.fan.coffee')
+    script(type='text/coffeescript', src='javascripts/mockup.start.coffee')
     script(type='text/coffeescript', src='javascripts/script.coffee')
 
     script
