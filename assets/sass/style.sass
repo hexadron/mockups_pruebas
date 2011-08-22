@@ -1,24 +1,43 @@
 @import "compass/css3/images"
 @import "set.css"
 
-html
-  height: 93%
+html, body
+  height: 100%
+  overflow: hidden
 
 body
-  height: 98%
   background-color: hsl(30, 0, 70)
 
 #container, #main
   height: 100%
   font-size: 12px
 
+#start
+  position: absolute
+  top: 0
+  width: 100%
+  height: 100%
+  display: none
+  color: hsl(0, 0%, 0%)
+  font-family: Comfortaa
+  font-weight: bold
+  text-align: center
+  font-size: 4.5em
+  text-shadow: 0 0 20px hsl(0, 0%, 60%)
+  background-color: hsla(50, 100%, 60%, .4)
+
+  h1
+    margin-top: 10%
+  h4
+    font-size: .5em
+    margin-top: -1.5em
+
 #whiteboard
   width: 100%
-  height: 84%
+  height: 80%
   border-bottom: 2px solid hsl(0, 0%, 15%)
   background-color: hsl(0, 0%, 100%)
-  +background-image(linear-gradient(hsla(30, 0, 100, 0.2), hsla(30, 0, 100, 0.2) 5.0%, hsla(30, 0, 20, 0.2) 5.05%, hsla(30, 0, 100, 0.2) 5.1%, hsla(30, 0, 100, 0.2) 10.0%, hsla(30, 0, 20, 0.2) 10.05%, hsla(30, 0, 100, 0.2) 10.1%, hsla(30, 0, 100, 0.2) 15.0%, hsla(30, 0, 20, 0.2) 15.05%, hsla(30, 0, 100, 0.2) 15.1%, hsla(30, 0, 100, 0.2) 20.0%, hsla(30, 0, 20, 0.2) 20.05%, hsla(30, 0, 100, 0.2) 20.1%, hsla(30, 0, 100, 0.2) 25.0%, hsla(30, 0, 20, 0.2) 25.05%, hsla(30, 0, 20, 0.2) 25.1%, hsla(30, 0, 100, 0.2) 25.3%, hsla(30, 0, 100, 0.2) 30.05%, hsla(30, 0, 20, 0.2) 30.10%, hsla(30, 0, 100, 0.2) 30.2%, hsla(30, 0, 100, 0.2) 35.05%, hsla(30, 0, 20, 0.2) 35.10%, hsla(30, 0, 100, 0.2) 35.2%, hsla(30, 0, 100, 0.2) 40.05%, hsla(30, 0, 20, 0.2) 40.10%, hsla(30, 0, 100, 0.2) 40.2%, hsla(30, 0, 100, 0.2) 45.05%, hsla(30, 0, 20, 0.2) 45.10%, hsla(30, 0, 100, 0.2) 45.2%, hsla(30, 0, 100, 0.2) 50.0%, hsla(30, 0, 20, 0.2) 50.1%, hsla(30, 0, 100, 0.2) 50.2%, hsla(30, 0, 20, 0.2) 50.25%, hsla(30, 0, 100, 0.2) 50.32%, hsla(30, 0, 100, 0.2) 55.05%, hsla(30, 0, 20, 0.2) 55.1%, hsla(30, 0, 100, 0.2) 55.2%, hsla(30, 0, 100, 0.2) 60.0%, hsla(30, 0, 20, 0.2) 60.05%, hsla(30, 0, 100, 0.2) 60.1%, hsla(30, 0, 100, 0.2) 65.0%, hsla(30, 0, 20, 0.2) 65.05%, hsla(30, 0, 100, 0.2) 65.1%, hsla(30, 0, 100, 0.2) 70.0%, hsla(30, 0, 20, 0.2) 70.05%, hsla(30, 0, 100, 0.2) 70.1%, hsla(30, 0, 100, 0.2) 75.0%, hsla(30, 0, 20, 0.2) 75.05%, hsla(30, 0, 100, 0.2) 75.5%, hsla(30, 0, 100, 0.2) 80.0%, hsla(30, 0, 20, 0.2) 80.15%, hsla(30, 0, 100, 0.2) 80.2%, hsla(30, 0, 100, 0.2) 85.3%, hsla(30, 0, 20, 0.2) 85.35%, hsla(30, 0, 100, 0.2) 85.4%, hsla(30, 0, 100, 0.2) 90.0%, hsla(30, 0, 20, 0.2) 90.05%, hsla(30, 0, 100, 0.2) 90.3%, hsla(30, 0, 100, 0.2) 95.0%, hsla(30, 0, 20, 0.2) 95.1%, hsla(30, 0, 100, 0.2) 95.2%,  hsla(30, 0, 100, 0.2)), linear-gradient(hsla(50, 100, 55, 0.4), hsla(50, 100, 55, 0.1)))
-  // background: -webkit-gradient(linear, left top, right top, from(hsla(30, 0, 100, 1)), color-stop(16.6%, hsla(0, 0, 100, 1)), color-stop(16.65%, hsla(0, 0, 30, 1)), color-stop(16.7%, hsla(0, 0, 100, 1)), color-stop(33.3%, hsla(0, 0, 100, 1)), color-stop(33.35%, hsla(0, 0, 30, 1)), color-stop(33.4%, hsla(0, 0, 100, 1)), color-stop(49.8%, hsla(0, 0, 100, 1)), color-stop(49.85%, hsla(0, 0, 30, 1)), color-stop(49.9%, hsla(0, 0, 100, 1)),color-stop(66.4%, hsla(0, 0, 100, 1)), color-stop(66.45%, hsla(0, 0, 30, 1)), color-stop(66.5%, hsla(0, 0, 100, 1)), color-stop(83%, hsla(0, 0, 100, 1)), color-stop(83.05%, hsla(0, 0, 30, 1)), color-stop(83.1%, hsla(0, 0, 100, 1)), color-stop(99.6%, hsla(0, 0, 100, 1)), color-stop(99.65%, hsla(0, 0, 30, 1)), color-stop(99.7%, hsla(0, 0, 100, 1)), to(hsla(30, 0, 90, 1)))
+  +background-image(linear-gradient(hsla(30, 0, 100, 0.2), hsla(30, 0, 100, 0.2) 5.0%, hsla(30, 0, 20, 0.2) 5.05%, hsla(30, 0, 100, 0.2) 5.1%, hsla(30, 0, 100, 0.2) 10.0%, hsla(30, 0, 20, 0.2) 10.05%, hsla(30, 0, 100, 0.2) 10.1%, hsla(30, 0, 100, 0.2) 15.0%, hsla(30, 0, 20, 0.2) 15.05%, hsla(30, 0, 100, 0.2) 15.1%, hsla(30, 0, 100, 0.2) 20.0%, hsla(30, 0, 20, 0.2) 20.05%, hsla(30, 0, 100, 0.2) 20.1%, hsla(30, 0, 100, 0.2) 25.0%, hsla(30, 0, 20, 0.2) 25.05%, hsla(30, 0, 20, 0.2) 25.1%, hsla(30, 0, 100, 0.2) 25.3%, hsla(30, 0, 100, 0.2) 30.05%, hsla(30, 0, 20, 0.2) 30.10%, hsla(30, 0, 100, 0.2) 30.2%, hsla(30, 0, 100, 0.2) 35.05%, hsla(30, 0, 20, 0.2) 35.06%, hsla(30, 0, 100, 0.2) 35.2%, hsla(30, 0, 100, 0.2) 40.05%, hsla(30, 0, 20, 0.2) 40.10%, hsla(30, 0, 100, 0.2) 40.2%, hsla(30, 0, 100, 0.2) 45.05%, hsla(30, 0, 20, 0.2) 45.10%, hsla(30, 0, 100, 0.2) 45.2%, hsla(30, 0, 100, 0.2) 50.0%, hsla(30, 0, 20, 0.2) 50.1%, hsla(30, 0, 100, 0.2) 50.2%, hsla(30, 0, 20, 0.2) 50.25%, hsla(30, 0, 100, 0.2) 50.26%, hsla(30, 0, 100, 0.2) 55.05%, hsla(30, 0, 20, 0.2) 55.1%, hsla(30, 0, 100, 0.2) 55.2%, hsla(30, 0, 100, 0.2) 60.0%, hsla(30, 0, 20, 0.2) 60.05%, hsla(30, 0, 100, 0.2) 60.1%, hsla(30, 0, 100, 0.2) 65.0%, hsla(30, 0, 20, 0.2) 65.05%, hsla(30, 0, 100, 0.2) 65.1%, hsla(30, 0, 100, 0.2) 70.0%, hsla(30, 0, 20, 0.2) 70.05%, hsla(30, 0, 100, 0.2) 70.1%, hsla(30, 0, 100, 0.2) 75.0%, hsla(30, 0, 20, 0.2) 75.05%, hsla(30, 0, 100, 0.2) 75.5%, hsla(30, 0, 100, 0.2) 80.0%, hsla(30, 0, 20, 0.2) 80.15%, hsla(30, 0, 100, 0.2) 80.2%, hsla(30, 0, 100, 0.2) 85.3%, hsla(30, 0, 20, 0.2) 85.35%, hsla(30, 0, 100, 0.2) 85.4%, hsla(30, 0, 100, 0.2) 90.0%, hsla(30, 0, 20, 0.2) 90.05%, hsla(30, 0, 100, 0.2) 90.3%, hsla(30, 0, 100, 0.2) 95.0%, hsla(30, 0, 20, 0.2) 95.1%, hsla(30, 0, 100, 0.2) 95.2%,  hsla(30, 0, 100, 0.2)), linear-gradient(hsla(50, 100, 55, 0.4), hsla(50, 100, 55, 0.1)))
 
 #taskbar
   position: relative
@@ -26,8 +45,8 @@ body
   float: left
   width: 100%
   margin: auto
-  height: 16%
-  background: -webkit-gradient(linear, left top, left bottom, from(hsl(30, 0, 87)), to(hsl(30, 0, 70)))
+  height: 18%
+  background: -webkit-gradient(linear, left top, left bottom, from(hsl(30, 0, 97)), to(hsl(30, 0, 70)))
 
 #taskbar ul
   float: left
