@@ -3,9 +3,11 @@
 	"version": "0.0.1",
 	"private": "true",
 	"dependencies": {
+		"coffee-script": "1.1.2",
 		"express": "2.3.11",
 		"jade": ">= 0.0.1",
 		"markdown-js": "0.0.3",
-		"cradle": "0.5.5"
+		"cradle": "0.5.5",
+		"uglify-js": ">= 1.0.7"
 	}
 }

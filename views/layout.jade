@@ -20,7 +20,6 @@ html(class='no-js', lang='en')
     
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(href='http://fonts.googleapis.com/css?family=Comfortaa:700', rel='stylesheet', type='text/css')
-    script(src='javascripts/libs/modernizr-2.0.6.min.js')
 
   body
     header#start
@@ -30,17 +29,7 @@ html(class='no-js', lang='en')
       #main(role='main')!= body
       footer
 
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js')
-    script window.jQuery || document.write('<script src="javascripts/libs/jquery-1.6.2.min.js"><\\/script>')
-
-    script(src='javascripts/libs/coffee-script.js')
-    script(src='javascripts/libs/underscore.js')
-    script(src='javascripts/libs/backbone.js')
-
-    script(type='text/coffeescript', src='javascripts/plugins.coffee')
-    script(type='text/coffeescript', src='javascripts/mockup.fan.coffee')
-    script(type='text/coffeescript', src='javascripts/mockup.start.coffee')
-    script(type='text/coffeescript', src='javascripts/script.coffee')
+    script(src='javascripts/core.js')
 
     script
       window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];

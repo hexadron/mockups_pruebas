@@ -1,4 +1,6 @@
 express = require 'express'
+asset = require './asset.coffee'
+
 #cradle = require 'cradle'
 
 app = module.exports = express.createServer()
@@ -13,6 +15,14 @@ app.configure ->
   app.use express.methodOverride()
   app.use app.router
   app.use express.static "#{__dirname}/public"
+
+asset.minify
+  source: 'assets/scripts'
+  lib_source: 'assets/scripts/libs'
+  libs: ['modernizr-2.0.6.min','underscore', 'jquery-1.6.2.min', 'backbone']
+  target: 'public/javascripts/core'
+
+asset.sasscompile __dirname
 
 app.configure 'development', ->
   app.use express.errorHandler
