@@ -9,7 +9,7 @@ puts = (str) -> sys.print "#{str}\n"
 
 exports.minifyupdating = false
 
-exports.sasscompile = (home) ->
+exports.sasscompile = ->
 	exec "compass watch", (stdout, stderr, err) ->
 		if err? then puts err
 

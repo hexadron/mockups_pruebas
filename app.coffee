@@ -22,7 +22,7 @@ asset.minify
   libs: ['modernizr-2.0.6.min','underscore', 'jquery-1.6.2.min', 'backbone']
   target: 'public/javascripts/core'
 
-asset.sasscompile __dirname
+asset.sasscompile
 
 app.configure 'development', ->
   app.use express.errorHandler
