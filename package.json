@@ -8,6 +8,7 @@
 		"jade": ">= 0.0.1",
 		"markdown-js": "0.0.3",
 		"cradle": "0.5.5",
-		"uglify-js": ">= 1.0.7"
+		"uglify-js": ">= 1.0.7",
+		"casset": "0.0.1"
 	}
 }

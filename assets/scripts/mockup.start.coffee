@@ -6,9 +6,8 @@ window.StartView = Backbone.View.extend
 		'click' : 'hide'
 
 	initialize: ->
-		me = @
-		$('#start').fadeIn 'slow', ->
-			me.canHide = true
+		$('#start').fadeIn 'slow', =>
+			@canHide = true
 
 	hide: ->
 		if @canHide

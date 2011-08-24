@@ -1,5 +1,5 @@
 express = require 'express'
-asset = require './asset.coffee'
+casset = require 'casset'
 
 #cradle = require 'cradle'
 
@@ -16,13 +16,15 @@ app.configure ->
   app.use app.router
   app.use express.static "#{__dirname}/public"
 
-asset.minify
+casset.apphome = __dirname
+
+casset.sasscompile()
+
+casset.minify
   source: 'assets/scripts'
   lib_source: 'assets/scripts/libs'
   libs: ['modernizr-2.0.6.min','underscore', 'jquery-1.6.2.min', 'backbone']
   target: 'public/javascripts/core'
-
-asset.sasscompile
 
 app.configure 'development', ->
   app.use express.errorHandler
