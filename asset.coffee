@@ -11,7 +11,7 @@ exports.minifyupdating = false
 
 exports.sasscompile = ->
 	exec "compass watch", (stdout, stderr, err) ->
-		if err? then puts err
+		if err? then puts "#{err}: compass watch"
 
 exports.minify = (options) ->
 	_source = options.source.trim()
@@ -21,7 +21,7 @@ exports.minify = (options) ->
 		source = if source.endsWith '/' then source else "#{source}/"
 		fs.readdir _source, (err, files) ->
 			if err?
-				puts err
+				"#{err}: reading dir #{_source}"
 			else
 				# for bootstrapping
 				runScript source, ->
@@ -61,10 +61,10 @@ doTheLibsWorks = (folder, libfiles, target) ->
 					ast = uglify.uglify.ast_squeeze ast
 					code = uglify.uglify.gen_code ast
 					fs.writeFile "#{target}.js", code, (err) ->
-						if err? then puts err
+						if err? then "#{err}: writing file #{target}.js"
 						exports.minifyupdating = false
 				else
-					puts error
+					puts "#{error}: reading dir /tmp/coffees.js"
 	f()
 														
 runScript = (source, callback = -> null) ->
