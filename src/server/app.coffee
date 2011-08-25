@@ -1,24 +1,32 @@
 express = require 'express'
 casset = require 'casset'
 
+###
+  require 'usuario.coffee'
+
+  exports.usuario = 
+  exports.mockup = 
+
+###
+
 #cradle = require 'cradle'
 
 app = module.exports = express.createServer()
 
-#conn = new(cradle.Connection)()
-#db = conn.database 'nombre_de_la_base_de_datos'
+#cn = new(cradle.Connection)()
+#db = cn.database 'nombre_de_la_base_de_datos'
 
 app.configure ->
-  app.set 'views', "#{__dirname}/views"
+  app.set 'views', '../../public/views'
   app.set 'view engine', 'jade'
   app.use express.bodyParser()
   app.use express.methodOverride()
   app.use app.router
-  app.use express.static "#{__dirname}/public"
+  app.use express.static "../../public"
 
 casset.apphome = __dirname
 
-casset.sasscompile()
+casset.sasscompile
 
 casset.minify
   source: 'assets/scripts'
