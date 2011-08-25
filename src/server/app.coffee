@@ -1,14 +1,6 @@
 express = require 'express'
 casset = require 'casset'
 
-###
-  require 'usuario.coffee'
-
-  exports.usuario = 
-  exports.mockup = 
-
-###
-
 #cradle = require 'cradle'
 
 app = module.exports = express.createServer()
