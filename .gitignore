@@ -1,5 +1,5 @@
-src/server/node_modules/
-src/server/logs/
+node_modules/
+logs/
 .DS_Store
 .sass-cache
 npm-debug.log
