@@ -1,5 +1,6 @@
 express = require 'express'
 casset = require 'casset'
+fs = require 'fs'
 
 #cradle = require 'cradle'
 
@@ -16,9 +17,9 @@ app.configure ->
   app.use app.router
   app.use express.static "../../public"
 
-casset.apphome = __dirname
+casset.apphome = '../..'
 
-casset.sasscompile
+#casset.sasscompile() # comentado para disminuir los procesos de ruby
 
 casset.minify
   source: 'assets/scripts'
@@ -38,6 +39,37 @@ app.get '/', (req, res) ->
   res.render 'index',
     title: 'Mockups'
 
+app.post '/', (req, res) ->
+  if req.body.write == 'true'
+    console.log "DEBE ESCRIBIR #{req.body.text}"
+    fs.writeFile 'logs.txt', req.body.text, (err) ->
+      console.log "ESCRIBE"
+      if err? then console.log err
+      check req, res
+  else
+    if req.body.wait == "true"
+      check req, res
+    else
+      fs.readFile 'logs.txt', 'utf8', (err, data) ->
+        res.write data
+        res.end()
+
+check = (req, res) ->
+  checkchanges req, (hay, data)->
+    if hay
+      res.write data
+      res.end()
+    else
+      setTimeout (-> check req, res), 750
+
+checkchanges = (req, callback) ->
+  fs.stat 'logs.txt', (err, stats) ->
+    if stats.mtime.getTime() > req.socket._idleStart.getTime()
+      fs.readFile 'logs.txt', 'utf8', (err, data) ->
+        if callback? then callback true, data
+    else
+      if callback? then callback false
+
 app.listen 3000
-#éste es sólo un comentario mientras tanto
-console.log "Express server listening on port %d", app.address().port
+
+console.log "Servidor ejecutándose en:\n http://localhost:%d", app.address().port

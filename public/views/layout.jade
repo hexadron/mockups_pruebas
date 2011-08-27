@@ -21,13 +21,7 @@ html(class='no-js', lang='en')
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(href='http://fonts.googleapis.com/css?family=Comfortaa:700', rel='stylesheet', type='text/css')
 
-  body
-    header#start
-      h1 moca
-      h4 click en cualquier lado para comenzar a crear una interfaz
-    #container
-      #main(role='main')!= body
-      footer
+  body!= body
 
     script(src='javascripts/core.js')
 
