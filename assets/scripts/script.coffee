@@ -32,7 +32,7 @@ $ ->
 			error: (err) -> console.log err
 			success: (res) -> ($ 'textarea').val res
 
-	($ 'textarea').bind 'keyup', ->
+	($ '#send').bind 'click', ->
 		text = $('textarea').val()
 		write text
 
