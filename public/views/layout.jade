@@ -20,11 +20,24 @@ html(class='no-js', lang='en')
     
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(href='http://fonts.googleapis.com/css?family=Comfortaa:700', rel='stylesheet', type='text/css')
+    script(src='javascripts/lib/modernizr-2.0.6.min.js')
 
-  body!= body
+  body
+    header#start
+      h1 moca
+      h4 click en cualquier lado para comenzar a crear una interfaz
+    #container
+      #main(role='main')!= body
+      footer
 
-    script(src='/socket.io/socket.io.js')
-    script(src='javascripts/core.js')
+    script(src='javascripts/lib/underscore.js')
+    script(src='javascripts/lib/jquery-1.6.2.min.js')
+    script(src='javascripts/lib/backbone.js')
+    script(src='javascripts/plugins.js')
+    script(src='javascripts/mockup.start.js')
+    script(src='javascripts/mockup.fan.js')
+    script(src='javascripts/mockup.dnd.js')
+    script(src='javascripts/script.js')
 
     script
       window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];

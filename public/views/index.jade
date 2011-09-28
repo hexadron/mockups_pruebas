@@ -1,20 +1,8 @@
-#start
-	h1 mocca
-	h4 click en cualquier lado para comenzar a crear una interfaz
-#container
-	#main(role='main')
-		#topbar
-			ul
-				li: a(href="") salir
-				li: a(href="") usuario
-		#whiteboard.nohoverboard
-			textarea
-			input(type='button', id='send', value='Send')
-		nav#taskbar
-			ul.menu
-				li(class='_text', draggable='true', id='_titulo')
-				li(class='_shape', draggable='true', id='_cuadrado')
-				li(class='_control', draggable='true', id='_boton')
-				li(class='_textcontainer', draggable='true', id='_textbox')
-				li(class='_container', draggable='true', id='_panel')
-	footer
+#whiteboard.nohoverboard
+nav#taskbar
+	ul.menu
+		li(class='_text', draggable='true', id='_titulo')
+		li(class='_shape', draggable='true', id='_cuadrado')
+		li(class='_control', draggable='true', id='_boton')
+		li(class='_textcontainer', draggable='true', id='_textbox')
+		li(class='_container', draggable='true', id='_panel')

@@ -5,13 +5,8 @@ html, body
   height: 100%
   overflow: hidden
 
-textarea, #send
-  width: 40%
-  margin: auto
-  height: 50%
-  display: block
-  font-size: 3em
-  padding: .5em
+body
+  background-color: hsl(30, 0, 70)
 
 #container, #main
   height: 100%
@@ -37,25 +32,9 @@ textarea, #send
     font-size: .5em
     margin-top: -1.5em
 
-#topbar
-  background: hsl(0, 0, 10)
-  ul
-    width: 60em
-    margin: auto
-    overflow: hidden
-    list-style: none
-  a
-    color: white
-    display: inline-block
-    font-size: 1.65em
-    padding: 1em 2em
-    text-decoration: none
-  li
-    float: right
-
 #whiteboard
   width: 100%
-  height: 76%
+  height: 80%
   border-bottom: 2px solid hsl(0, 0%, 15%)
   background-color: hsl(0, 0%, 100%)
   +background-image(linear-gradient(hsla(30, 0, 100, 0.2), hsla(30, 0, 100, 0.2) 5.0%, hsla(30, 0, 20, 0.2) 5.05%, hsla(30, 0, 100, 0.2) 5.1%, hsla(30, 0, 100, 0.2) 10.0%, hsla(30, 0, 20, 0.2) 10.05%, hsla(30, 0, 100, 0.2) 10.1%, hsla(30, 0, 100, 0.2) 15.0%, hsla(30, 0, 20, 0.2) 15.05%, hsla(30, 0, 100, 0.2) 15.1%, hsla(30, 0, 100, 0.2) 20.0%, hsla(30, 0, 20, 0.2) 20.05%, hsla(30, 0, 100, 0.2) 20.1%, hsla(30, 0, 100, 0.2) 25.0%, hsla(30, 0, 20, 0.2) 25.05%, hsla(30, 0, 20, 0.2) 25.1%, hsla(30, 0, 100, 0.2) 25.3%, hsla(30, 0, 100, 0.2) 30.05%, hsla(30, 0, 20, 0.2) 30.10%, hsla(30, 0, 100, 0.2) 30.2%, hsla(30, 0, 100, 0.2) 35.05%, hsla(30, 0, 20, 0.2) 35.06%, hsla(30, 0, 100, 0.2) 35.2%, hsla(30, 0, 100, 0.2) 40.05%, hsla(30, 0, 20, 0.2) 40.10%, hsla(30, 0, 100, 0.2) 40.2%, hsla(30, 0, 100, 0.2) 45.05%, hsla(30, 0, 20, 0.2) 45.10%, hsla(30, 0, 100, 0.2) 45.2%, hsla(30, 0, 100, 0.2) 50.0%, hsla(30, 0, 20, 0.2) 50.1%, hsla(30, 0, 100, 0.2) 50.2%, hsla(30, 0, 20, 0.2) 50.25%, hsla(30, 0, 100, 0.2) 50.26%, hsla(30, 0, 100, 0.2) 55.05%, hsla(30, 0, 20, 0.2) 55.1%, hsla(30, 0, 100, 0.2) 55.2%, hsla(30, 0, 100, 0.2) 60.0%, hsla(30, 0, 20, 0.2) 60.05%, hsla(30, 0, 100, 0.2) 60.1%, hsla(30, 0, 100, 0.2) 65.0%, hsla(30, 0, 20, 0.2) 65.05%, hsla(30, 0, 100, 0.2) 65.1%, hsla(30, 0, 100, 0.2) 70.0%, hsla(30, 0, 20, 0.2) 70.05%, hsla(30, 0, 100, 0.2) 70.1%, hsla(30, 0, 100, 0.2) 75.0%, hsla(30, 0, 20, 0.2) 75.05%, hsla(30, 0, 100, 0.2) 75.5%, hsla(30, 0, 100, 0.2) 80.0%, hsla(30, 0, 20, 0.2) 80.15%, hsla(30, 0, 100, 0.2) 80.2%, hsla(30, 0, 100, 0.2) 85.3%, hsla(30, 0, 20, 0.2) 85.35%, hsla(30, 0, 100, 0.2) 85.4%, hsla(30, 0, 100, 0.2) 90.0%, hsla(30, 0, 20, 0.2) 90.05%, hsla(30, 0, 100, 0.2) 90.3%, hsla(30, 0, 100, 0.2) 95.0%, hsla(30, 0, 20, 0.2) 95.1%, hsla(30, 0, 100, 0.2) 95.2%,  hsla(30, 0, 100, 0.5)), linear-gradient(hsla(50, 100, 55, 0.45), hsla(50, 100, 55, 0.6)))
@@ -82,6 +61,7 @@ textarea, #send
   position: relative
   right: 50%
   float: left
+  z-index: 10
 
 #taskbar .menu li
   width: 5em
@@ -91,16 +71,40 @@ textarea, #send
   border: 2px solid hsl(0, 0%, 15%)
   background-color: hsl(0, 0%, 60%)
 
+.object
+  position: absolute
+
 #taskbar .menu li:hover
   background-color: hsl(0, 99%, 57%)
-
-.inner
-  height: 100%
-  border-radius: 100em
-  display: none
 
 .hoverboard
   background-color: hsl(60, 80%, 80%) !important
 
 .nohoverboard
   background-color: hsl(0, 0%, 100%)
+
+// Internal Elements Classes
+$eWidth: 3em
+$eColor: hsl(0, 80%, 50%)
+
+@mixin figure
+  width: $eWidth
+  height: $eWidth
+  background-color: $eColor
+
+.square
+  @include figure
+
+.circle
+  @include figure
+  border-radius: 3 * $eWidth
+
+.navigator
+  border: 1px solid black
+  width: 300px
+  height: 200px
+  resize: both
+  background: url(../images/navigator.png)
+  background-size: cover
+  overflow: auto
+  z-index: -1

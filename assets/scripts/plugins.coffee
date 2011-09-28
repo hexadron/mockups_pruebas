@@ -29,3 +29,5 @@ String::startsWith = (str) -> @slice(0, str.length) == str
 String::contains = (str) -> @indexOf(str) != -1
 
 String::endsWith = (str) -> @slice(-str.length) == str
+
+$.fn.reverse = [].reverse

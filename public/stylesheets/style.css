@@ -6,22 +6,17 @@ html, body {
 }
 
 /* line 8, ../../assets/sass/style.sass */
-textarea, #send {
-  width: 40%;
-  margin: auto;
-  height: 50%;
-  display: block;
-  font-size: 3em;
-  padding: 0.5em;
+body {
+  background-color: #b3b3b3;
 }
 
-/* line 16, ../../assets/sass/style.sass */
+/* line 11, ../../assets/sass/style.sass */
 #container, #main {
   height: 100%;
   font-size: 12px;
 }
 
-/* line 20, ../../assets/sass/style.sass */
+/* line 15, ../../assets/sass/style.sass */
 #start {
   position: absolute;
   top: 0;
@@ -36,44 +31,20 @@ textarea, #send {
   text-shadow: 0 0 20px #999999;
   background-color: rgba(255, 221, 51, 0.4);
 }
-/* line 34, ../../assets/sass/style.sass */
+/* line 29, ../../assets/sass/style.sass */
 #start h1 {
   margin-top: 10%;
 }
-/* line 36, ../../assets/sass/style.sass */
+/* line 31, ../../assets/sass/style.sass */
 #start h4 {
   font-size: 0.5em;
   margin-top: -1.5em;
 }
 
-/* line 40, ../../assets/sass/style.sass */
-#topbar {
-  background: #1a1a1a;
-}
-/* line 42, ../../assets/sass/style.sass */
-#topbar ul {
-  width: 60em;
-  margin: auto;
-  overflow: hidden;
-  list-style: none;
-}
-/* line 47, ../../assets/sass/style.sass */
-#topbar a {
-  color: white;
-  display: inline-block;
-  font-size: 1.65em;
-  padding: 1em 2em;
-  text-decoration: none;
-}
-/* line 53, ../../assets/sass/style.sass */
-#topbar li {
-  float: right;
-}
-
-/* line 56, ../../assets/sass/style.sass */
+/* line 35, ../../assets/sass/style.sass */
 #whiteboard {
   width: 100%;
-  height: 76%;
+  height: 80%;
   border-bottom: 2px solid #262626;
   background-color: white;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.2)), color-stop(5%, rgba(255, 255, 255, 0.2)), color-stop(5.05%, rgba(51, 51, 51, 0.2)), color-stop(5.1%, rgba(255, 255, 255, 0.2)), color-stop(10%, rgba(255, 255, 255, 0.2)), color-stop(10.05%, rgba(51, 51, 51, 0.2)), color-stop(10.1%, rgba(255, 255, 255, 0.2)), color-stop(15%, rgba(255, 255, 255, 0.2)), color-stop(15.05%, rgba(51, 51, 51, 0.2)), color-stop(15.1%, rgba(255, 255, 255, 0.2)), color-stop(20%, rgba(255, 255, 255, 0.2)), color-stop(20.05%, rgba(51, 51, 51, 0.2)), color-stop(20.1%, rgba(255, 255, 255, 0.2)), color-stop(25%, rgba(255, 255, 255, 0.2)), color-stop(25.05%, rgba(51, 51, 51, 0.2)), color-stop(25.1%, rgba(51, 51, 51, 0.2)), color-stop(25.3%, rgba(255, 255, 255, 0.2)), color-stop(30.05%, rgba(255, 255, 255, 0.2)), color-stop(30.1%, rgba(51, 51, 51, 0.2)), color-stop(30.2%, rgba(255, 255, 255, 0.2)), color-stop(35.05%, rgba(255, 255, 255, 0.2)), color-stop(35.06%, rgba(51, 51, 51, 0.2)), color-stop(35.2%, rgba(255, 255, 255, 0.2)), color-stop(40.05%, rgba(255, 255, 255, 0.2)), color-stop(40.1%, rgba(51, 51, 51, 0.2)), color-stop(40.2%, rgba(255, 255, 255, 0.2)), color-stop(45.05%, rgba(255, 255, 255, 0.2)), color-stop(45.1%, rgba(51, 51, 51, 0.2)), color-stop(45.2%, rgba(255, 255, 255, 0.2)), color-stop(50%, rgba(255, 255, 255, 0.2)), color-stop(50.1%, rgba(51, 51, 51, 0.2)), color-stop(50.2%, rgba(255, 255, 255, 0.2)), color-stop(50.25%, rgba(51, 51, 51, 0.2)), color-stop(50.26%, rgba(255, 255, 255, 0.2)), color-stop(55.05%, rgba(255, 255, 255, 0.2)), color-stop(55.1%, rgba(51, 51, 51, 0.2)), color-stop(55.2%, rgba(255, 255, 255, 0.2)), color-stop(60%, rgba(255, 255, 255, 0.2)), color-stop(60.05%, rgba(51, 51, 51, 0.2)), color-stop(60.1%, rgba(255, 255, 255, 0.2)), color-stop(65%, rgba(255, 255, 255, 0.2)), color-stop(65.05%, rgba(51, 51, 51, 0.2)), color-stop(65.1%, rgba(255, 255, 255, 0.2)), color-stop(70%, rgba(255, 255, 255, 0.2)), color-stop(70.05%, rgba(51, 51, 51, 0.2)), color-stop(70.1%, rgba(255, 255, 255, 0.2)), color-stop(75%, rgba(255, 255, 255, 0.2)), color-stop(75.05%, rgba(51, 51, 51, 0.2)), color-stop(75.5%, rgba(255, 255, 255, 0.2)), color-stop(80%, rgba(255, 255, 255, 0.2)), color-stop(80.15%, rgba(51, 51, 51, 0.2)), color-stop(80.2%, rgba(255, 255, 255, 0.2)), color-stop(85.3%, rgba(255, 255, 255, 0.2)), color-stop(85.35%, rgba(51, 51, 51, 0.2)), color-stop(85.4%, rgba(255, 255, 255, 0.2)), color-stop(90%, rgba(255, 255, 255, 0.2)), color-stop(90.05%, rgba(51, 51, 51, 0.2)), color-stop(90.3%, rgba(255, 255, 255, 0.2)), color-stop(95%, rgba(255, 255, 255, 0.2)), color-stop(95.1%, rgba(51, 51, 51, 0.2)), color-stop(95.2%, rgba(255, 255, 255, 0.2)), color-stop(100%, rgba(255, 255, 255, 0.5))), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 217, 26, 0.45)), color-stop(100%, rgba(255, 217, 26, 0.6)));
@@ -84,7 +55,7 @@ textarea, #send {
   background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2) 5%, rgba(51, 51, 51, 0.2) 5.05%, rgba(255, 255, 255, 0.2) 5.1%, rgba(255, 255, 255, 0.2) 10%, rgba(51, 51, 51, 0.2) 10.05%, rgba(255, 255, 255, 0.2) 10.1%, rgba(255, 255, 255, 0.2) 15%, rgba(51, 51, 51, 0.2) 15.05%, rgba(255, 255, 255, 0.2) 15.1%, rgba(255, 255, 255, 0.2) 20%, rgba(51, 51, 51, 0.2) 20.05%, rgba(255, 255, 255, 0.2) 20.1%, rgba(255, 255, 255, 0.2) 25%, rgba(51, 51, 51, 0.2) 25.05%, rgba(51, 51, 51, 0.2) 25.1%, rgba(255, 255, 255, 0.2) 25.3%, rgba(255, 255, 255, 0.2) 30.05%, rgba(51, 51, 51, 0.2) 30.1%, rgba(255, 255, 255, 0.2) 30.2%, rgba(255, 255, 255, 0.2) 35.05%, rgba(51, 51, 51, 0.2) 35.06%, rgba(255, 255, 255, 0.2) 35.2%, rgba(255, 255, 255, 0.2) 40.05%, rgba(51, 51, 51, 0.2) 40.1%, rgba(255, 255, 255, 0.2) 40.2%, rgba(255, 255, 255, 0.2) 45.05%, rgba(51, 51, 51, 0.2) 45.1%, rgba(255, 255, 255, 0.2) 45.2%, rgba(255, 255, 255, 0.2) 50%, rgba(51, 51, 51, 0.2) 50.1%, rgba(255, 255, 255, 0.2) 50.2%, rgba(51, 51, 51, 0.2) 50.25%, rgba(255, 255, 255, 0.2) 50.26%, rgba(255, 255, 255, 0.2) 55.05%, rgba(51, 51, 51, 0.2) 55.1%, rgba(255, 255, 255, 0.2) 55.2%, rgba(255, 255, 255, 0.2) 60%, rgba(51, 51, 51, 0.2) 60.05%, rgba(255, 255, 255, 0.2) 60.1%, rgba(255, 255, 255, 0.2) 65%, rgba(51, 51, 51, 0.2) 65.05%, rgba(255, 255, 255, 0.2) 65.1%, rgba(255, 255, 255, 0.2) 70%, rgba(51, 51, 51, 0.2) 70.05%, rgba(255, 255, 255, 0.2) 70.1%, rgba(255, 255, 255, 0.2) 75%, rgba(51, 51, 51, 0.2) 75.05%, rgba(255, 255, 255, 0.2) 75.5%, rgba(255, 255, 255, 0.2) 80%, rgba(51, 51, 51, 0.2) 80.15%, rgba(255, 255, 255, 0.2) 80.2%, rgba(255, 255, 255, 0.2) 85.3%, rgba(51, 51, 51, 0.2) 85.35%, rgba(255, 255, 255, 0.2) 85.4%, rgba(255, 255, 255, 0.2) 90%, rgba(51, 51, 51, 0.2) 90.05%, rgba(255, 255, 255, 0.2) 90.3%, rgba(255, 255, 255, 0.2) 95%, rgba(51, 51, 51, 0.2) 95.1%, rgba(255, 255, 255, 0.2) 95.2%, rgba(255, 255, 255, 0.5)), linear-gradient(rgba(255, 217, 26, 0.45), rgba(255, 217, 26, 0.6));
 }
 
-/* line 63, ../../assets/sass/style.sass */
+/* line 42, ../../assets/sass/style.sass */
 #taskbar {
   position: relative;
   padding-top: 2em;
@@ -95,7 +66,7 @@ textarea, #send {
   background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#b3b3b3));
 }
 
-/* line 72, ../../assets/sass/style.sass */
+/* line 51, ../../assets/sass/style.sass */
 #taskbar ul {
   float: left;
   clear: left;
@@ -103,19 +74,20 @@ textarea, #send {
   left: 50%;
 }
 
-/* line 78, ../../assets/sass/style.sass */
+/* line 57, ../../assets/sass/style.sass */
 #taskbar .menu {
   height: 100%;
 }
 
-/* line 81, ../../assets/sass/style.sass */
+/* line 60, ../../assets/sass/style.sass */
 #taskbar li {
   position: relative;
   right: 50%;
   float: left;
+  z-index: 10;
 }
 
-/* line 86, ../../assets/sass/style.sass */
+/* line 66, ../../assets/sass/style.sass */
 #taskbar .menu li {
   width: 5em;
   height: 5em;
@@ -125,24 +97,49 @@ textarea, #send {
   background-color: #999999;
 }
 
-/* line 94, ../../assets/sass/style.sass */
+/* line 74, ../../assets/sass/style.sass */
+.object {
+  position: absolute;
+}
+
+/* line 77, ../../assets/sass/style.sass */
 #taskbar .menu li:hover {
   background-color: #fe2525;
 }
 
-/* line 97, ../../assets/sass/style.sass */
-.inner {
-  height: 100%;
-  border-radius: 100em;
-  display: none;
-}
-
-/* line 102, ../../assets/sass/style.sass */
+/* line 80, ../../assets/sass/style.sass */
 .hoverboard {
   background-color: #f5f5a3 !important;
 }
 
-/* line 105, ../../assets/sass/style.sass */
+/* line 83, ../../assets/sass/style.sass */
 .nohoverboard {
   background-color: white;
+}
+
+/* line 95, ../../assets/sass/style.sass */
+.square {
+  width: 3em;
+  height: 3em;
+  background-color: #e61919;
+}
+
+/* line 98, ../../assets/sass/style.sass */
+.circle {
+  width: 3em;
+  height: 3em;
+  background-color: #e61919;
+  border-radius: 9em;
+}
+
+/* line 102, ../../assets/sass/style.sass */
+.navigator {
+  border: 1px solid black;
+  width: 300px;
+  height: 200px;
+  resize: both;
+  background: url(../images/navigator.png);
+  background-size: cover;
+  overflow: auto;
+  z-index: -1;
 }
